@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-20T23:53:41 CEST" name="Default suite" finished-at="2025-07-20T23:55:01 CEST" duration-ms="79550">
+  <suite started-at="2025-07-21T16:38:46 CEST" name="Default suite" finished-at="2025-07-21T16:39:05 CEST" duration-ms="19368">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@55b5f5d2]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@192d74fb]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-07-20T23:53:41 CEST" name="Default test" finished-at="2025-07-20T23:55:01 CEST" duration-ms="79550">
+    <test started-at="2025-07-21T16:38:46 CEST" name="Default test" finished-at="2025-07-21T16:39:05 CEST" duration-ms="19368">
       <class name="com.bdd.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.bdd.runner.TestRunner@55b5f5d2]" started-at="2025-07-20T23:53:41 CEST" name="setUpClass" finished-at="2025-07-20T23:53:41 CEST" duration-ms="19" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.bdd.runner.TestRunner@192d74fb]" started-at="2025-07-21T16:38:46 CEST" name="setUpClass" finished-at="2025-07-21T16:38:46 CEST" duration-ms="23" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4c447c09]]>
+                <![CDATA[org.testng.TestRunner@41dc0598]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@55b5f5d2]" started-at="2025-07-20T23:53:41 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-20T23:55:01 CEST" duration-ms="79437" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@192d74fb]" started-at="2025-07-21T16:38:46 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-21T16:39:05 CEST" duration-ms="19249" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Verify Tanks can be added to Watchlist"]]>
+                <![CDATA["Verify user can navigate to all the tabs from Overview tab"]]>
               </value>
             </param>
             <param index="1">
@@ -34,10 +34,21 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Tab not presnt: report]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Tab not presnt: report
+at com.bdd.stepdefinitions.CommonSteps.i_should_navigate_to_page(CommonSteps.java:71)
+at ✽.I should navigate to "report" page(file:///C:/Users/Shreyasu/Pooja/WebAutomation/RosemountTankMasterAT/src/test/resources/features/OverViewPageFunctionalities.feature:23)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.bdd.runner.TestRunner@55b5f5d2]" started-at="2025-07-20T23:55:01 CEST" name="tearDownClass" finished-at="2025-07-20T23:55:01 CEST" duration-ms="62" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.bdd.runner.TestRunner@192d74fb]" started-at="2025-07-21T16:39:05 CEST" name="tearDownClass" finished-at="2025-07-21T16:39:05 CEST" duration-ms="55" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

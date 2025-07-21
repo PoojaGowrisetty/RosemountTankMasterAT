@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class WatchlistPage {
 	
 	WebDriver driver;
@@ -41,7 +42,7 @@ public class WatchlistPage {
 	}
 
 	public boolean VerifyWatchlistTabIsSelected() {
-		return watchlistTab.isDisplayed();
+		return watchlistTab.isDisplayed()&& driver.getCurrentUrl().contains("/watchlist");
 	}
 	
 	public boolean VerifyTankIsDisplayed(String tankname) {

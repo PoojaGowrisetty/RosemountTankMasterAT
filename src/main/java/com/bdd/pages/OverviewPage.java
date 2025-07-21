@@ -72,7 +72,7 @@ public class OverviewPage {
 	private WebElement tankNoteClearNoteButton;
 	
 	@FindBy(id = "comment-icon-AId")
-	private WebElement tankNoteCommentIcon;
+	private List<WebElement> tankNoteCommentIcon;
 
 
 	public WebElement getStarIcon(String tankname) {
@@ -108,26 +108,25 @@ public class OverviewPage {
 					break;
 				case "movement":
 					movementTablink.click();
-					wait.until(ExpectedConditions.invisibilityOf(allTankTablink));
+					wait.until(ExpectedConditions.urlContains("/movement"));
 					break;
 				case "watchlist":
 					watchlistTablink.click();
-					wait.until(ExpectedConditions.invisibilityOf(allTankTablink));
+					wait.until(ExpectedConditions.urlContains("/watchlist"));
 					break;
 				case "inventory":
 					inventoryTablink.click();
-					wait.until(ExpectedConditions.invisibilityOf(allTankTablink));
+					wait.until(ExpectedConditions.urlContains("/inventory"));
 					break;
 				case "reports":
 					reportTablink.click();
-					wait.until(ExpectedConditions.invisibilityOf(allTankTablink));
+					wait.until(ExpectedConditions.urlContains("/reports/"));
 					break;
 				default:
 					throw new IllegalArgumentException("Tab not presnt: " + tabname);
 				}
 			}
 		} catch (StaleElementReferenceException e) {
-			// Re-initialize the element
 			PageFactory.initElements(driver, this);
 			ClickonHeaderTab(tabname);
 
@@ -136,10 +135,9 @@ public class OverviewPage {
 	}
 
 	public boolean verifyAllTanksAreDisplayed() {
-		
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.visibilityOfAllElements(alltankslist));
-		//driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		if (alltankslist.isEmpty()) {
 			System.out.println("No tanks are displayed.");
 			return false;
@@ -152,6 +150,11 @@ public class OverviewPage {
 		}
 		System.out.println("All tanks are displayed.");
 		return true;
+		}
+
+		catch (TimeoutException e) {
+	        throw new NoSuchElementException("All tanks not displayed");
+	}
 	}
 
 	public int VerifyNumberofTanksinAllTanksTab() {
@@ -167,7 +170,6 @@ public class OverviewPage {
 	public void ClickonStarIconOfTank(String tankname) {
 		WebElement starIconofTank = getStarIcon(tankname);
 		String classValue = starIconofTank.getAttribute("id");
-	    //classValue.contains("fa-star-solid-AId");
 		if (!classValue.contains("fa-star-solid-AId")) {
 			starIconofTank.click();
 		}
@@ -210,8 +212,7 @@ public class OverviewPage {
 	}
 	
 	public void ClickTankNoteButton() {
-		 new WebDriverWait(driver, Duration.ofSeconds(5))
-	            .until(ExpectedConditions.visibilityOf(tankNoteButton)).isDisplayed();
+		 new WebDriverWait(driver, Duration.ofSeconds(2)).until(ExpectedConditions.visibilityOf(tankNoteButton));
 		if (tankNoteButton.isDisplayed()) {
 			tankNoteButton.click();		
 		}
@@ -225,7 +226,6 @@ public class OverviewPage {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(tankNoteField));
 		tankNoteField.click();
-		//wait.until(ExpectedConditions.elementToBeSelected(tankNoteField));
 		tankNoteField.sendKeys(notes);
 	}
 	
@@ -236,7 +236,7 @@ public class OverviewPage {
 	public void ClickonNoteButton(String buttonName) {
 		try {
 			if (buttonName != null) {
-				 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+				 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 				switch (buttonName.toLowerCase()) {
 				case "save":
 					wait.until(ExpectedConditions.elementToBeClickable(tankNoteSaveButton));
@@ -263,9 +263,11 @@ public class OverviewPage {
 	
 	public boolean VerifyNoteIconisPresent() {
 		try {
-	        return new WebDriverWait(driver, Duration.ofSeconds(5))
-	            .until(ExpectedConditions.visibilityOf(tankNoteCommentIcon)).isDisplayed();
-	    } catch (TimeoutException e) {
+	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));  
+	           return tankNoteCommentIcon.size()>1;
+	           
+	    } 
+		catch (TimeoutException e) {
 	        return false;
 	    }
 	}

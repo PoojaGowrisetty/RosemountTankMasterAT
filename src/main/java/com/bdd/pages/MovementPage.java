@@ -1,16 +1,15 @@
 package com.bdd.pages;
-
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class MovementPage {
 	
 	WebDriver driver;
-
+	
 	@FindBy(id = "OverviewButtonId")
 	private WebElement overviewTablink;
 
@@ -39,7 +38,7 @@ public class MovementPage {
 	}
 
 	public boolean VerifyMovementTabIsSelected() {
-		return movementTab.isDisplayed();
+		return movementTab.isDisplayed() && driver.getCurrentUrl().contains("/movement"); 
 	}
 	
 	public int VerifyNumberofTanksinAllTanksTab() {

@@ -32,7 +32,7 @@ public class ReportsPage {
 	}
 
 	public boolean VerifyReportsTabIsSelected() {
-		return reportsTab.isDisplayed();
+		return reportsTab.isDisplayed()&& driver.getCurrentUrl().contains("/reports/");
 	}
 	
 	

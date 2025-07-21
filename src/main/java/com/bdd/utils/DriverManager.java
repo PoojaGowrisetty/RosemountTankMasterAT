@@ -10,7 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 	public class DriverManager {
 		 private static WebDriver driver;
-		 static String currentDir = System.getProperty("user.dir");
+		 static String currentDir = System.getProperty("user.dir"); 
 
 		 public static WebDriver getDriver() {
 		        if (driver == null) {
@@ -43,6 +43,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 		        }
 		        return driver;
 		    }
+		 
 		 
 		 public static void quitDriver() {
 		        if (driver != null) {

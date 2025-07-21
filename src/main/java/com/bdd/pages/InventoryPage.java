@@ -3,10 +3,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 public class InventoryPage {
 	
 	WebDriver driver;
+	
 
 	@FindBy(id = "OverviewButtonId")
 	private WebElement overviewTablink;
@@ -32,7 +32,7 @@ public class InventoryPage {
 	}
 
 	public boolean VerifyInventoryTabIsSelected() {
-		return inventoryTab.isDisplayed();
+		return inventoryTab.isDisplayed() && driver.getCurrentUrl().contains("/inventory/");
 	}
 	
 	
