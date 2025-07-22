@@ -8,7 +8,8 @@ import io.cucumber.testng.TestNGCucumberRunner;
 				 glue = {"com.bdd.stepdefinitions","com.bdd.hooks"},
 				 plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber.json"},
 				 monochrome = true,
-				 tags = "@overviewpage")
+				 tags = "")
+
 public class TestRunner extends AbstractTestNGCucumberTests {
 	// This class will be used to run the Cucumber tests with TestNG
 	// The @CucumberOptions annotation specifies the configuration for the Cucumber tests

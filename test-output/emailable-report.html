@@ -9,13 +9,30 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">19,368</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">1,480</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.bdd.runner.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1753108726280</td><td rowspan="1">19249</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.bdd.runner.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1753167685155</td><td rowspan="1">1409</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.bdd.runner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Verify user can navigate to all the tabs from Overview tab&quot;</td><td>&quot;Verify functionalities in OverviewPage&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.IllegalArgumentException: Tab not presnt: report
-	at com.bdd.stepdefinitions.CommonSteps.i_should_navigate_to_page(CommonSteps.java:71)
-	at ✽.I should navigate to &quot;report&quot; page(file:///C:/Users/Shreyasu/Pooja/WebAutomation/RosemountTankMasterAT/src/test/resources/features/OverViewPageFunctionalities.feature:23)
+<h2>Default test</h2><h3 id="m0">com.bdd.runner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Verify API returns tank details for a valid tank ID&quot;</td><td>&quot;Verify the overview page response API&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">io.cucumber.testng.UndefinedStepException: The step &apos;the TankMaster API endpoint is &quot;https://tankmastermobiledemo.rosemount.com/overview/all%20tanks&quot;&apos; and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given(&quot;the TankMaster API endpoint is {string}&quot;)
+public void the_tank_master_api_endpoint_is(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;I send a GET request to the TankMaster API&quot;)
+public void i_send_a_get_request_to_the_tank_master_api() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;the response status code should be {int}&quot;)
+public void the_response_status_code_should_be(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at ✽.the TankMaster API endpoint is &quot;https://tankmastermobiledemo.rosemount.com/overview/all%20tanks&quot;(file:///C:/Users/Shreyasu/Pooja/WebAutomation/RosemountTankMasterAT/src/test/resources/features/APITests.feature:5)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

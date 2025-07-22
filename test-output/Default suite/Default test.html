@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 21 16:38:46 CEST 2025</td>
+<td>Started on:</td><td>Tue Jul 22 09:01:25 CEST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>19 seconds (19368 ms)</td>
+<tr><td>Total time:</td><td>1 seconds (1480 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,17 +76,51 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.bdd.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.bdd.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user can navigate to all the tabs from Overview tab", "Verify functionalities in OverviewPage"</td>
-<td><div><pre>java.lang.IllegalArgumentException: Tab not presnt: report
-	at com.bdd.stepdefinitions.CommonSteps.i_should_navigate_to_page(CommonSteps.java:71)
-	at ✽.I should navigate to &quot;report&quot; page(file:///C:/Users/Shreyasu/Pooja/WebAutomation/RosemountTankMasterAT/src/test/resources/features/OverViewPageFunctionalities.feature:23)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1218496682", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1218496682'><pre>java.lang.IllegalArgumentException: Tab not presnt: report
-	at com.bdd.stepdefinitions.CommonSteps.i_should_navigate_to_page(CommonSteps.java:71)
-	at ✽.I should navigate to &quot;report&quot; page(file:///C:/Users/Shreyasu/Pooja/WebAutomation/RosemountTankMasterAT/src/test/resources/features/OverViewPageFunctionalities.feature:23)
+<td title='com.bdd.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.bdd.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify API returns tank details for a valid tank ID", "Verify the overview page response API"</td>
+<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;the TankMaster API endpoint is &quot;https://tankmastermobiledemo.rosemount.com/overview/all%20tanks&quot;&apos; and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given(&quot;the TankMaster API endpoint is {string}&quot;)
+public void the_tank_master_api_endpoint_is(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;I send a GET request to the TankMaster API&quot;)
+public void i_send_a_get_request_to_the_tank_master_api() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;the response status code should be {int}&quot;)
+public void the_response_status_code_should_be(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at ✽.the TankMaster API endpoint is &quot;https://tankmastermobiledemo.rosemount.com/overview/all%20tanks&quot;(file:///C:/Users/Shreyasu/Pooja/WebAutomation/RosemountTankMasterAT/src/test/resources/features/APITests.feature:5)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1385352906", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1385352906'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;the TankMaster API endpoint is &quot;https://tankmastermobiledemo.rosemount.com/overview/all%20tanks&quot;&apos; and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given(&quot;the TankMaster API endpoint is {string}&quot;)
+public void the_tank_master_api_endpoint_is(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;I send a GET request to the TankMaster API&quot;)
+public void i_send_a_get_request_to_the_tank_master_api() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;the response status code should be {int}&quot;)
+public void the_response_status_code_should_be(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at ✽.the TankMaster API endpoint is &quot;https://tankmastermobiledemo.rosemount.com/overview/all%20tanks&quot;(file:///C:/Users/Shreyasu/Pooja/WebAutomation/RosemountTankMasterAT/src/test/resources/features/APITests.feature:5)
 </pre></div></td>
-<td>19</td>
-<td>com.bdd.runner.TestRunner@192d74fb</td></tr>
+<td>1</td>
+<td>com.bdd.runner.TestRunner@2ece4966</td></tr>
 </table><p>
 </body>
 </html>

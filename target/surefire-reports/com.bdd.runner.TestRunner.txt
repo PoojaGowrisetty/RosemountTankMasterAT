@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.bdd.runner.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 108.5 s -- in com.bdd.runner.TestRunner
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 121.8 s -- in com.bdd.runner.TestRunner

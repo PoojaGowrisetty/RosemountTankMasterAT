@@ -63,6 +63,7 @@ public class TankDetailsPage {
 	}
 	
 	public void ClickonNavigationButtonInDetailsPage(String buttonName) {
+		try {
 		if(tankdetailsHeader.isDisplayed()) {
 			switch (buttonName.toLowerCase()) {
 			case "inventory":
@@ -87,6 +88,10 @@ public class TankDetailsPage {
 			}
 		else {
 			System.out.println("Tank Details Page is not displayed");
+		}}
+		catch(Exception e) {
+			throw new RuntimeException("Tank Details Page is not loaded");
+	
 		}
 	}
 	

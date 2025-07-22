@@ -1,0 +1,10 @@
+com\bdd\pages\WatchlistPage.class
+com\bdd\pages\MovementPage.class
+com\bdd\pages\LoginPage.class
+com\bdd\pages\OverviewPage.class
+com\bdd\pages\ReportsPage.class
+com\bdd\utils\ConfigManager.class
+com\bdd\utils\DriverManager.class
+com\bdd\pages\TankDetailsPage.class
+com\bdd\utils\Screenshots.class
+com\bdd\pages\InventoryPage.class

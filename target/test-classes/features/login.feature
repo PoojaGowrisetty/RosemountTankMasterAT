@@ -1,4 +1,4 @@
-@smoke
+@logintest
 Feature: Verify the login functionality of the Rosemount Tank Master application
 
   Background:
@@ -7,8 +7,8 @@ Feature: Verify the login functionality of the Rosemount Tank Master application
 
   Scenario: Successful login with valid credentials
    When the user enters a valid username and password
-    When clicks the login button
-    Then the user should be redirected to the overview page
+   When clicks the login button
+   Then the user should be redirected to the overview page
 
 
   

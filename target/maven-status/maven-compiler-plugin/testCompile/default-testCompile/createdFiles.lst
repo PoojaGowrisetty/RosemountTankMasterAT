@@ -1,0 +1,6 @@
+com\bdd\hooks\Hooks.class
+com\bdd\runner\TestRunner.class
+com\bdd\stepdefinitions\APITestsSteps.class
+com\bdd\stepdefinitions\LoginSteps.class
+com\bdd\stepdefinitions\CommonSteps.class
+com\bdd\stepdefinitions\StepDefinations.class

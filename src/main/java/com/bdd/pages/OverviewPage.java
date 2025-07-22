@@ -2,7 +2,6 @@ package com.bdd.pages;
 
 import java.time.Duration;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -55,25 +54,27 @@ public class OverviewPage {
 
 	@FindBy(id = "TankDetailButtonAId")
 	private WebElement tankDetailButton;
-	
+
 	@FindBy(id = "TankCommentButtonAId")
 	private WebElement tankNoteButton;
-	
+
 	@FindBy(id = "textarea")
 	private WebElement tankNoteField;
-	
-	@FindBy(id ="SaveButtonAId")
+
+	@FindBy(id = "SaveButtonAId")
 	private WebElement tankNoteSaveButton;
-	
+
 	@FindBy(id = "CloseButtonAId")
 	private WebElement tankNoteCancelButton;
-	
-	@FindBy(id="ClearButtonAId")
+
+	@FindBy(id = "ClearButtonAId")
 	private WebElement tankNoteClearNoteButton;
-	
+
 	@FindBy(id = "comment-icon-AId")
 	private List<WebElement> tankNoteCommentIcon;
 
+	@FindBy(id = "tankHeaderTitle_AId")
+	WebElement Gettankname;
 
 	public WebElement getStarIcon(String tankname) {
 		return driver.findElement(By.xpath("//*[@id=\"tankHeaderTitle_AId\" and contains(text(), \"" + tankname
@@ -85,13 +86,42 @@ public class OverviewPage {
 				.findElement(By.xpath("//*[@id=\"tankHeaderTitle_AId\" and contains(text(), \"" + tankname + "\")]"));
 	}
 
+	public WebElement getFlowRateofTank(String tankname) {
+		return driver.findElement(By.xpath("//*[@id=\"tankHeaderTitle_AId\" and contains(text(), \"" + tankname
+				+ "\")]/ancestor::div[@class=\"tank-card-container\"]//*[@id=\"Flow_RateAId\"]/div/span[1]/span[2]"));
+
+	}
+
+	public WebElement getArrowofTank(String tankname) {
+		return driver.findElement(By.xpath("//*[@id=\"tankHeaderTitle_AId\" and contains(text(), \"" + tankname
+				+ "\")]/ancestor::div[@class=\"tank-card-container\"]//*[@class = \"arrow-polygon\"]"));
+	}
+
+	public WebElement getLevelofTank(String tankname) {
+		return driver.findElement(By.xpath("//*[@id=\"tankHeaderTitle_AId\" and contains(text(), \"" + tankname
+				+ "\")]/ancestor::div[@class=\"tank-card-container\"]//*[@id=\"LevelAId\"]/div/span[1]/span[2]"));
+
+	}
+
+	public WebElement getTOVofTank(String tankname) {
+		return driver.findElement(By.xpath("//*[@id=\"tankHeaderTitle_AId\" and contains(text(), \"" + tankname
+				+ "\")]/ancestor::div[@class=\"tank-card-container\"]//*[@id=\"TOVAId\"]/div/span[1]/span[2]"));
+
+	}
+
+	public WebElement getFWLIdofTank(String tankname) {
+		return driver.findElement(By.xpath("//*[@id=\"tankHeaderTitle_AId\" and contains(text(), \"" + tankname
+				+ "\")]/ancestor::div[@class=\"tank-card-container\"]//*[@id=\"FWLAId\"]/div/span[1]/span[2]"));
+
+	}
+
 	public OverviewPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	public boolean VerifyOverViewPageIsDisplayed() {
-		return overviewTablink.isDisplayed();
+		return overviewTablink.isDisplayed() && driver.getCurrentUrl().contains("overview/all");
 	}
 
 	public int VerifyNumberofHeaderTabsinOverviewPage() {
@@ -100,7 +130,7 @@ public class OverviewPage {
 
 	public void ClickonHeaderTab(String tabname) {
 		try {
-			 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 			if (tabname != null) {
 				switch (tabname.toLowerCase()) {
 				case "overview":
@@ -136,25 +166,25 @@ public class OverviewPage {
 
 	public boolean verifyAllTanksAreDisplayed() {
 		try {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.visibilityOfAllElements(alltankslist));
-		if (alltankslist.isEmpty()) {
-			System.out.println("No tanks are displayed.");
-			return false;
-		}
-		for (WebElement tank : alltankslist) {
-			if (!tank.isDisplayed()) {
-				System.out.println("Not all tanks are displayed.");
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			wait.until(ExpectedConditions.visibilityOfAllElements(alltankslist));
+			if (alltankslist.isEmpty()) {
+				System.out.println("No tanks are displayed.");
 				return false;
 			}
-		}
-		System.out.println("All tanks are displayed.");
-		return true;
+			for (WebElement tank : alltankslist) {
+				if (!tank.isDisplayed()) {
+					System.out.println("Not all tanks are displayed.");
+					return false;
+				}
+			}
+			System.out.println("All tanks are displayed.");
+			return true;
 		}
 
 		catch (TimeoutException e) {
-	        throw new NoSuchElementException("All tanks not displayed");
-	}
+			throw new NoSuchElementException("All tanks not displayed");
+		}
 	}
 
 	public int VerifyNumberofTanksinAllTanksTab() {
@@ -193,55 +223,54 @@ public class OverviewPage {
 		return expandedtank.isDisplayed();
 
 	}
-	
+
 	public boolean VerifyTankDetailsButtonIsDisplayed() {
 		return tankDetailButton.isDisplayed();
 	}
-	
+
 	public void ClickTankDetailsButton() {
-		if (tankDetailButton.isDisplayed()== true) {
-			tankDetailButton.click();		
+		if (tankDetailButton.isDisplayed()) {
+			tankDetailButton.click();
+		} else {
+			System.out.println("Tank Details Button is not displayed.");
 		}
-		else {
-			System.out.println("Tank Details is not displayed.");
-		}
-				
-	}	
+
+	}
+
 	public boolean VerifyTankNoteButtonIsDisplayed() {
 		return tankNoteButton.isDisplayed();
 	}
-	
+
 	public void ClickTankNoteButton() {
-		 new WebDriverWait(driver, Duration.ofSeconds(2)).until(ExpectedConditions.visibilityOf(tankNoteButton));
+		new WebDriverWait(driver, Duration.ofSeconds(2)).until(ExpectedConditions.visibilityOf(tankNoteButton));
 		if (tankNoteButton.isDisplayed()) {
-			tankNoteButton.click();		
-		}
-		else {
+			tankNoteButton.click();
+		} else {
 			System.out.println("Tank Note is not displayed.");
 		}
-				
+
 	}
-	
+
 	public void EnterDetailsinNoteInTankDetails(String notes) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(tankNoteField));
 		tankNoteField.click();
 		tankNoteField.sendKeys(notes);
 	}
-	
+
 	public String GetTextFromNoteInTankDetails() {
 		return tankNoteField.getText();
 	}
-	
+
 	public void ClickonNoteButton(String buttonName) {
 		try {
 			if (buttonName != null) {
-				 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 				switch (buttonName.toLowerCase()) {
 				case "save":
 					wait.until(ExpectedConditions.elementToBeClickable(tankNoteSaveButton));
 					tankNoteSaveButton.click();
-					 wait.until(ExpectedConditions.invisibilityOf(tankNoteSaveButton)); 
+					wait.until(ExpectedConditions.invisibilityOf(tankNoteSaveButton));
 					break;
 				case "cancel":
 					tankNoteCancelButton.click();
@@ -257,20 +286,77 @@ public class OverviewPage {
 				}
 			}
 		} catch (TimeoutException e) {
-	        throw new NoSuchElementException("Button '" + buttonName + "' was not clickable");
-		}			
+			throw new NoSuchElementException("Button '" + buttonName + "' was not clickable");
+		}
 	}
-	
+
 	public boolean VerifyNoteIconisPresent() {
 		try {
-	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));  
-	           return tankNoteCommentIcon.size()>1;
-	           
-	    } 
-		catch (TimeoutException e) {
-	        return false;
-	    }
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+			return tankNoteCommentIcon.size() > 1;
+
+		} catch (TimeoutException e) {
+			return false;
+		}
 	}
-	
+
+	public boolean VerifyLevelofTanksinOverviewPage() {
+		try {
+			for (WebElement tank : alltankslist) {
+				if (tank.isDisplayed()) {
+					String tankname = tank.findElement(By.id("tankHeaderTitle_AId")).getText();
+					double getlevel = Double.parseDouble(getLevelofTank(tankname).getText().replace(",", ""));
+					if (getlevel < 0) {
+						System.out.println("Level is for the tank" + tankname);
+						return false;
+					}
+				}
+			}
+
+			return true;
+		} catch (TimeoutException e) {
+			return false;
+		}
+
+	}
+
+	public boolean VerifyFWLofTanksinOverviewPage(double value) {
+		try {
+			for (WebElement tank : alltankslist) {
+				if (tank.isDisplayed()) {
+					String tankname = tank.findElement(By.id("tankHeaderTitle_AId")).getText();
+					double getFWL = Double.parseDouble(getFWLIdofTank(tankname).getText().replace(",", ""));
+					if (getFWL != value) {
+						System.out.println("FWL is for the tank" + tankname);
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+
+		catch (TimeoutException e) {
+			return false;
+		}
+	}
+
+	public boolean VerifyTOVofTanksinOverviewPage() {
+		try {
+			for (WebElement tank : alltankslist) {
+				if (tank.isDisplayed()) {
+					String tankname = tank.findElement(By.id("tankHeaderTitle_AId")).getText();
+					double getTOV = Double.parseDouble(getFWLIdofTank(tankname).getText().replace(",", ""));
+					if (getTOV < 0) {
+						System.out.println("TOV is for the tank is not greater than 0 " + tankname);
+						return false;
+					}
+				}
+			}
+
+			return true;
+		} catch (TimeoutException e) {
+			return false;
+		}
+	}
 
 }
