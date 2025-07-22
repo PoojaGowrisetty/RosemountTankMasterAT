@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        REPORT_DIR = "target"
+        REPORT_DIR = "target/cucumber-reports"
     }
 
     stages {
