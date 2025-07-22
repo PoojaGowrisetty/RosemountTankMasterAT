@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git url: 'https://github.com/PoojaGowrisetty/RosemountTankMasterAT.git', branch: 'main'
+                git url: 'https://github.com/PoojaGowrisetty/RosemountTankMasterAT.git', branch: 'master'
             }
         }
 
