@@ -1,7 +1,7 @@
 @apitests
-Feature: Verify the overview page response API
+Feature: Verify the response of Rosemount TankMaster Demo WebApplication 
 
-  Scenario: Verify API returns tank details for a valid tank ID
+  Scenario: Verify the response of TankMaster API
     Given the TankMaster API endpoint is "https://tankmastermobiledemo.rosemount.com/"
     When I send a GET request to the TankMaster API
     Then the response status code should be 403 
