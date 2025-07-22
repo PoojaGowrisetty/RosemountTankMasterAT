@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        REPORT_DIR = "target/cucumber-reports"
+        REPORT_DIR = "target"
     }
 
     stages {
@@ -23,17 +23,14 @@ pipeline {
             }
         }
 
-        stage('Publish Cucumber HTML Report') {
-            steps {
-                cucumber buildStatus: 'UNSTABLE',
-                    fileIncludePattern: '**/cucumber.json',
-                    jsonReportDirectory: "${REPORT_DIR}"
-            }
-        }
     }
 
     post {
         always {
+            cucumber buildStatus: 'UNSTABLE',
+                    fileIncludePattern: '**/cucumber.json',
+                    jsonReportDirectory: "${REPORT_DIR}"
+            
             archiveArtifacts artifacts: 'target/**/*.html', fingerprint: true
             junit 'target/surefire-reports/*.xml'
         }
