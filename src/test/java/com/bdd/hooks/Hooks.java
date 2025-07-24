@@ -21,6 +21,7 @@ import io.cucumber.java.*;
 	    @Before
 	    public void beforeScenario(Scenario scenario) {
 	        // Runs before each scenario
+	        DriverManager.getDriver();
 	        System.out.println("Starting scenario: " + scenario.getName());
 	    }
 
@@ -45,7 +46,6 @@ import io.cucumber.java.*;
 
 	    @AfterAll
 	    public static void afterAll() {
-	        DriverManager.quitDriver();
 	        System.out.println("=== Test suite completed ===");
 	    }
 	}

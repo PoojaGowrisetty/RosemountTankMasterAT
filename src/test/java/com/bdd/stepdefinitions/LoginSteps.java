@@ -16,11 +16,6 @@ public class LoginSteps {
      loginPage = new LoginPage(driver);
  }
  
- @Given("the Rosemount Tank Master application is running")
-	public void the_rosemount_tank_master_application_is_running() {
-		driver = DriverManager.getDriver();
-
-	}
 
 	@Given("the user is on the login page")
 	public void the_user_is_on_the_login_page() {
@@ -43,7 +38,6 @@ public class LoginSteps {
 	
 	@Given("User is SignedIn to RosemountTankMaster Page")
 	public void user_is_signedIn_to_rosemounttankMaster_page() {
-		the_rosemount_tank_master_application_is_running();
 		the_user_is_on_the_login_page();
 		the_user_enters_a_valid_username_and_password();
 		clicks_the_login_button();

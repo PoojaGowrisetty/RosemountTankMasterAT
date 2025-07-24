@@ -1,7 +1,7 @@
 @overviewpagetest
 Feature: Verify functionalities in OverviewPage 
-Background:
-  Given  User is SignedIn to RosemountTankMaster Page   
+	Background:
+  	Given  User is SignedIn to RosemountTankMaster Page   
     
     @testcase1
     Scenario: Verify OverviewPage Tab contains all sections

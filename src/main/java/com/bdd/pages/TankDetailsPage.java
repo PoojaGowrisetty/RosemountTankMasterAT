@@ -68,19 +68,15 @@ public class TankDetailsPage {
 			switch (buttonName.toLowerCase()) {
 			case "inventory":
 				inventorynavigationbutton.click();
-			 driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(100));
 				break;
 			case "level":
 				levelnavigationbutton.click();
-				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(100));
 				break;
 			case "temperaturepressure":
 				tempPressurenavigationbutton.click();
-				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(100));
 				break;
 			case "alarmlimits":
 				alarmlimitsnavigationbutton.click();
-				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(100));
 				break;
 			default:
                 throw new IllegalArgumentException("Button is not displayed: " + buttonName);

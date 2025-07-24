@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-22T11:58:24 CEST" name="Surefire suite" finished-at="2025-07-22T11:58:27 CEST" duration-ms="3120">
+  <suite started-at="2025-07-24T11:03:51 CEST" name="Surefire suite" finished-at="2025-07-24T11:05:49 CEST" duration-ms="118441">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@485e36bc]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-07-22T11:58:24 CEST" name="Surefire test" finished-at="2025-07-22T11:58:27 CEST" duration-ms="3120">
+    <test started-at="2025-07-24T11:03:51 CEST" name="Surefire test" finished-at="2025-07-24T11:05:49 CEST" duration-ms="118441">
       <class name="com.bdd.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.bdd.runner.TestRunner@485e36bc]" started-at="2025-07-22T11:58:24 CEST" name="setUpClass" finished-at="2025-07-22T11:58:24 CEST" duration-ms="24" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:03:51 CEST" name="setUpClass" finished-at="2025-07-24T11:03:51 CEST" duration-ms="23" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3ea48c37]]>
+                <![CDATA[org.testng.TestRunner@497cf31a]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@485e36bc]" started-at="2025-07-22T11:58:24 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-22T11:58:27 CEST" duration-ms="3055" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:03:51 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-24T11:03:54 CEST" duration-ms="3135" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +37,135 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.bdd.runner.TestRunner@485e36bc]" started-at="2025-07-22T11:58:27 CEST" name="tearDownClass" finished-at="2025-07-22T11:58:27 CEST" duration-ms="19" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:03:54 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-24T11:04:12 CEST" duration-ms="18272" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify OverviewPage Tab contains all sections"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify functionalities in OverviewPage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:04:12 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-24T11:04:25 CEST" duration-ms="12960" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user can navigate to all the tabs from Overview tab"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify functionalities in OverviewPage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:04:25 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-24T11:04:39 CEST" duration-ms="13950" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify count of movement tanks matches in all tanks and movement page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify functionalities in OverviewPage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:04:39 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-24T11:04:51 CEST" duration-ms="12426" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the flow rate of all the tanks and matches the arrow right direction"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify functionalities in OverviewPage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:04:51 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-24T11:05:03 CEST" duration-ms="11601" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify Tanks can be added to Watchlist"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify functionalities in OverviewPage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:05:03 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-24T11:05:14 CEST" duration-ms="11146" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user can go to Tank details page and navigate in tankdetails page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify functionalities in OverviewPage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:05:14 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-24T11:05:41 CEST" duration-ms="26659" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the functionality of note in Tanks in overview page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify functionalities in OverviewPage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:05:41 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-24T11:05:49 CEST" duration-ms="8212" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Successful login with valid credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the login functionality of the Rosemount Tank Master application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.bdd.runner.TestRunner@6c5945a7]" started-at="2025-07-24T11:05:49 CEST" name="tearDownClass" finished-at="2025-07-24T11:05:49 CEST" duration-ms="38" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
